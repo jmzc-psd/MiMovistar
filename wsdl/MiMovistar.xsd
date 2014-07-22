@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:es:telefonica:mimovistar:types"
+  xmlns:tns="urn:es:telefonica:mimovistar:types" elementFormDefault="qualified">
+
+  <complexType name="eventoContadorPromocionesType">
+    <sequence>
+      <element name="msisdn" type="tns:MSISDNType"/>
+      <element name="indicador" type="string"/>
+      <element name="fechaEvento" type="long"/>
+      <element name="puertoServidor" type="int" minOccurs="0"/>
+      <element name="subindice" type="int" minOccurs="0"/>
+      <element name="idCombo" type="int" minOccurs="0"/>
+    </sequence>
+  </complexType>
+  
+  <complexType name="eventoContadorPromocionesResponseType">
+    <sequence>
+      <element name="msisdn" type="tns:MSISDNType" minOccurs="0"/>
+      <element name="codRetorno" type="tns:CodRetornoType3"/>
+    </sequence>
+  </complexType>
+  
+   <complexType name="eventoUmbralPromocionesType">
+    <sequence>
+      <element name="msisdn" type="tns:MSISDNType"/>
+      <element name="indicador" type="string"/>
+      <element name="fechaEvento" type="long"/>
+      <element name="puertoServidor" type="int" minOccurs="0"/>
+	  <element name="umbralXN" type="int" minOccurs="0"/>
+	  <element name="umbralPromo" type="int" minOccurs="0"/>
+	  <element name="subindice" type="int" minOccurs="0"/>
+	  <element name="idCombo" type="int" minOccurs="0"/>
+    </sequence>
+  </complexType>
+  
+  <complexType name="eventoUmbralPromocionesResponseType">
+    <sequence>
+      <element name="msisdn" type="tns:MSISDNType" minOccurs="0"/>
+      <element name="codRetorno" type="tns:CodRetornoType3"/>
+    </sequence>
+  </complexType>    
+  
+  <simpleType name="MSISDNType">
+    <restriction base="string">
+      <pattern value="\d*"/>
+      <minLength value="9"/>
+      <maxLength value="15"/>
+    </restriction>
+  </simpleType>
+
+   <simpleType name="CodRetornoType3">
+    <restriction base="string">
+      <minLength value="3"/>
+      <maxLength value="3"/>
+    </restriction>
+  </simpleType>
+  
+
+  <element name="eventoContadorPromociones" type="tns:eventoContadorPromocionesType"/>
+  <element name="eventoContadorPromocionesResponse" type="tns:eventoContadorPromocionesResponseType"/>
+  <element name="eventoUmbralPromociones" type="tns:eventoUmbralPromocionesType"/>
+  <element name="eventoUmbralPromocionesResponse" type="tns:eventoUmbralPromocionesResponseType"/>
+  
+ 
+</schema>

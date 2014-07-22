@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+
+<!-- 
+<Resource auth="Container" type="javax.sql.DataSource"
+		  factory="org.apache.tomcat.jdbc.pool.DataSourceFactory" 
+		  driverClassName="org.postgresql.Driver"
+		  initialSize="0"  maxActive="100" maxIdle="20" maxWait="10000" mindIdle="0" 
+		  name="datasource/mes/default" password="f4c3b0KU$3R" removeAbandoned="true"
+		  url="jdbc:postgresql://localhost:5433/Facebook?LoginTimeout=3"
+		  username="facebook_usr" validationQuery="SELECT 1" testOnBorrow="true" />
+                  
+                  
+<Resource auth="Container" type="javax.sql.DataSource"
+		  factory="org.apache.tomcat.jdbc.pool.DataSourceFactory" 
+		  driverClassName="org.postgresql.Driver"
+		  initialSize="0"  maxActive="100" maxIdle="20" maxWait="10000" mindIdle="0" 
+		  name="datasource/mes/facebook" password="f4c3b0KU$3R" removeAbandoned="true"
+		  url="jdbc:postgresql://localhost:5433/Facebook?LoginTimeout=3"
+		  username="facebook_usr" validationQuery="SELECT 1" testOnBorrow="true" />
+ -->
+ 
+ 
+ <!-- 
+<Resource auth="Container" type="javax.sql.DataSource"
+		  factory="org.apache.tomcat.jdbc.pool.DataSourceFactory" 
+		  driverClassName="org.postgresql.Driver"
+		  initialSize="0"  maxActive="100" maxIdle="20" maxWait="10000" mindIdle="0" 
+		  name="datasource/mes/default" password="facebook_usr" removeAbandoned="true"
+		  url="jdbc:postgresql://localhost:5432/Facebook?LoginTimeout=3"
+		  username="facebook_usr" validationQuery="SELECT 1" testOnBorrow="true" />
+                  
+                  
+<Resource auth="Container" type="javax.sql.DataSource"
+		  factory="org.apache.tomcat.jdbc.pool.DataSourceFactory" 
+		  driverClassName="org.postgresql.Driver"
+		  initialSize="0"  maxActive="100" maxIdle="20" maxWait="10000" mindIdle="0" 
+		  name="datasource/mes/facebook" password="facebook_usr" removeAbandoned="true"
+		  url="jdbc:postgresql://localhost:5432/Facebook?LoginTimeout=3"
+		  username="facebook_usr" validationQuery="SELECT 1" testOnBorrow="true" />			
+ -->
+ 
+</Context>

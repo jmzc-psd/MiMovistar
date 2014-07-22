@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="MiMovistar" targetNamespace="urn:es:telefonica:mimovistar" xmlns:tns="urn:es:telefonica:mimovistar" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:mm_t="urn:es:telefonica:mimovistar:types">
+
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import namespace="urn:es:telefonica:mimovistar:types" schemaLocation="MiMovistar.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  
+  <wsdl:message name="EventoContadorPromocionesRequest">
+    <wsdl:part name="parameters" element="mm_t:eventoContadorPromociones"/>
+  </wsdl:message>
+  <wsdl:message name="EventoContadorPromocionesResponse">
+    <wsdl:part name="parameters" element="mm_t:eventoContadorPromocionesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="EventoUmbralPromocionesRequest">
+    <wsdl:part name="parameters" element="mm_t:eventoUmbralPromociones" />
+  </wsdl:message>
+  <wsdl:message name="EventoUmbralPromocionesResponse">
+    <wsdl:part name="parameters" element="mm_t:eventoUmbralPromocionesResponse" />
+  </wsdl:message>
+ 
+  <wsdl:portType name="MiMovistarPortType">
+    <wsdl:operation name="eventoContadorPromociones">
+      <wsdl:input message="tns:EventoContadorPromocionesRequest"/>
+      <wsdl:output message="tns:EventoContadorPromocionesResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="eventoUmbralPromociones">
+      <wsdl:input  message="tns:EventoUmbralPromocionesRequest" />
+      <wsdl:output message="tns:EventoUmbralPromocionesResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  
+  <wsdl:binding name="MiMovistarBinding" type="tns:MiMovistarPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="eventoContadorPromociones">
+      <soap:operation soapAction="eventoContadorPromociones"/>
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eventoUmbralPromociones">
+      <soap:operation soapAction="eventoUmbralPromociones" />
+      <wsdl:input>
+       <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  
+  <wsdl:service name="MiMovistarService">
+    <wsdl:port binding="tns:MiMovistarBinding" name="MiMovistarPort">
+      <soap:address location="http://127.0.0.1/MiMovistar"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
